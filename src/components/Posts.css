@@ -1,0 +1,39 @@
+.Posts {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.post-wrapper {
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0px;
+}
+
+.post-title {
+
+}
+
+.post-body {
+
+}
+
+.post-author {
+
+}
+
+.post-vote {
+
+}
+
+.post-created {
+
+}
+
+.post-category{
+
+}

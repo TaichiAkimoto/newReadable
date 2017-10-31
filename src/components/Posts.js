@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {
   getPosts,
 } from '../actions/Posts'
+import './Posts.css'
 
 class Posts extends Component {
   componentDidMount() {
@@ -12,21 +13,17 @@ class Posts extends Component {
   render() {
     const { posts } = this.props
     return (
-      <div className='App'>
-        <ul>
-          {posts.map(post => (
-            <div className='Posts' key={post.id}>
-              <li>
-                title: {post.title}<br/>
-                body: {post.body}<br/>
-                author: {post.author}<br/>
-                voteScore: {post.voteScore}<br/>
-                created: {post.timestamp}<br/>
-                category: {post.category}<br/>
-              </li>
-            </div>
-          ))}
-        </ul>
+      <div className='Posts'>
+        {posts.map(post => (
+          <div className='post-wrapper'key={post.id}>
+              <div className='post-title'>title: {post.title}</div>
+              <div className='post-body'>body: {post.body}</div>
+              <div className='post-author'>author: {post.author}</div>
+              <div className='post-vote'>voteScore: {post.voteScore}</div>
+              <div className='post-created'>created: {post.timestamp}</div>
+              <div className='post-category'>category: {post.category}</div>
+          </div>
+        ))}
       </div>
     )
   }
