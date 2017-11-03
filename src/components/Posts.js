@@ -5,7 +5,12 @@ import './Posts.css'
 
 class Posts extends Component {
   render() {
-    const { posts, category } = this.props
+    const { posts_r, category, route } = this.props
+    let posts = posts_r
+    if(route.params.category !== undefined) {
+      let current_category = route.params.category
+      posts = posts_r.filter((post) => post.category === current_category)
+    }
     return (
       <div className='Flex'>
         <div className='Posts'>
@@ -35,7 +40,7 @@ class Posts extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.Posts,
+    posts_r: state.Posts,
     category: state.Category,
   }
 }

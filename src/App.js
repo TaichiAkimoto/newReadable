@@ -21,11 +21,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path='/' render={() => (
-          <Posts />
+        <Route exact path='/' render={({ match }) => (
+          <Posts route={match}/>
         )}/>
-        <Route exact path='/:category' render={() => (
-          <Posts />
+        <Route exact path='/:category' render={({ match }) => (
+          <Posts route={match}/>
         )}/>
       </div>
     );
