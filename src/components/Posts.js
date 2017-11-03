@@ -16,12 +16,12 @@ class Posts extends Component {
       <div className='Posts'>
         {posts.map(post => (
           <div className='post-wrapper'key={post.id}>
-              <div className='post-title'>title: {post.title}</div>
-              <div className='post-body'>body: {post.body}</div>
-              <div className='post-author'>author: {post.author}</div>
-              <div className='post-vote'>voteScore: {post.voteScore}</div>
-              <div className='post-created'>created: {post.timestamp}</div>
-              <div className='post-category'>category: {post.category}</div>
+              <p className='post-title'>title-> {post.title}</p>
+              <p className='post-body'>body-> {post.body}</p>
+              <p className='post-author'>author-> {post.author}</p>
+              <p className='post-vote'>voteScore-> {post.voteScore}</p>
+              <p className='post-created'>created-> {post.timestamp}</p>
+              <p className='post-category'>category-> {post.category}</p>
           </div>
         ))}
       </div>
