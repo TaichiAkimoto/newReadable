@@ -1,5 +1,8 @@
-.Posts {
+.Flex {
   display: flex;
+}
+
+.Posts {
   flex-direction: column;
   align-items: flex-start;
 }
@@ -10,26 +13,25 @@
   margin-top: 30px;
 }
 
-.post-title {
-
+.Category {
+  flex-direction: row;
+  margin-top: 50px;
 }
 
-.post-body {
-
+.Link {
+  font: 15px;
+  text-decoration: none;
+  background-color: purple;
+  color: white;
+  margin-right: 5px;
+  padding: 2px 6px 2px 6px;
+  border-radius: 10px;
 }
 
-.post-author {
-
+.Link:hover {
+  background-color: #FF4DFF;
 }
 
-.post-vote {
-
-}
-
-.post-created {
-
-}
-
-.post-category{
-
+.Link:active {
+  background-color: #FFEEFF;
 }

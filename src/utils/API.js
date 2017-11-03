@@ -8,6 +8,11 @@ export const getPosts = () =>
   fetch(`${uri}/posts`, { headers })
     .then(posts => posts.json())
 
+export const getCategory = () =>
+  fetch(`${uri}/categories`, { headers })
+    .then(res => res.json())
+    .then(res => res.categories)
+
 function createAuthToken() {
   let authToken = localStorage.authToken
   if (!authToken)
