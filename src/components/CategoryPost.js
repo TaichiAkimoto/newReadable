@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import {
-  getPosts,
-  getCategory,
-} from '../actions/Posts'
-import './Posts.css'
 
-class Posts extends Component {
-  componentDidMount() {
-    this.props.dispatch(getPosts())
-    this.props.dispatch(getCategory())
-  }
+class CategoryPost extends Component {
   render() {
-    const { posts, category } = this.props
+    const { posts_org, category, route } = this.props
+    let current_category = route.params.category
+    let posts = posts_org.filter((post) => post.category === current_category)
     return (
       <div className='Flex'>
         <div className='Posts'>
@@ -44,10 +37,10 @@ class Posts extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.Posts,
+    posts_org: state.Posts,
     category: state.Category,
   }
 }
 export default connect(
   mapStateToProps,
-)(Posts)
+)(CategoryPost)

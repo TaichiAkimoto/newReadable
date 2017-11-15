@@ -7,7 +7,6 @@ export const Posts = (state=[], actions) => {
   switch (actions.type) {
     case GET_POSTS:
       return [
-        ...state,
         ...actions.posts
       ]
     default:
@@ -19,7 +18,6 @@ export const Category = (state=[], actions) => {
   switch (actions.type) {
     case GET_CATEGORY:
       return [
-        ...state,
         ...actions.category
       ]
     default:
