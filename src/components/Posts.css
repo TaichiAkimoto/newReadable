@@ -1,5 +1,6 @@
 .Flex {
   display: flex;
+  justify-content: space-around;
 }
 
 .Posts {
@@ -9,8 +10,14 @@
 
 .post-wrapper {
   text-align: left;
-  margin-left: 100px;
+  margin-left: 10px;
   margin-top: 30px;
+}
+
+.not-post {
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 200px;
 }
 
 .Category {
@@ -18,10 +25,30 @@
   margin-top: 50px;
 }
 
+.Sorts {
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.sort-button {
+  font: 15px;
+  text-decoration: none;
+  color: white;
+  padding: 0px 6px 2px 6px;
+}
+
+.sort-button:hover {
+  background-color: #FF4DFF;
+}
+
+.sort-button:active {
+  background-color: #FFEEFF;
+}
+
 .Link {
   font: 15px;
   text-decoration: none;
-  background-color: purple;
+  background-color: gray;
   color: white;
   margin-right: 5px;
   padding: 2px 6px 2px 6px;
@@ -34,4 +61,12 @@
 
 .Link:active {
   background-color: #FFEEFF;
+}
+
+.selected {
+  background-color: purple;
+}
+
+.deselected {
+  background-color: gray;
 }
