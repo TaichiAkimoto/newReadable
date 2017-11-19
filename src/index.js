@@ -20,7 +20,7 @@ let store = compose(
   applyMiddleware(logger, thunk),
   autoRehydrate()
 )(createStore)(reducer);
-persistStore(store, {storage: localForage})
+persistStore(store, {storage: localForage, blacklist: ['routing']})
 
 ReactDOM.render(
   <Provider store={store}>

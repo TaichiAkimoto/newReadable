@@ -18,7 +18,7 @@ class Posts extends Component {
     this.props.dispatch(getCategory())
   }
   render() {
-    const { posts, category } = this.props
+    const { posts, category, history } = this.props
     const { order } = this.state
     posts.sort(sortBy(order));
     return (
@@ -27,7 +27,8 @@ class Posts extends Component {
           {posts.length === 0 ?
             <div style={{marginTop:'50px'}}>Data is empty !</div> :
             posts.map(post => (
-            <div className='post-wrapper'key={post.id}>
+            <div className='post-wrapper' key={post.id}
+              onClick={() => history.push('/detail/' + post.id)}>
               <p className='post-title'>title-> {post.title}</p>
               <p className='post-body'>body-> {post.body}</p>
               <p className='post-author'>author-> {post.author}</p>
@@ -48,7 +49,6 @@ class Posts extends Component {
               </Link>
             ))}
           </div>
-          <Link to={'/detail/1'}>go to test</Link>
           <div className='Sorts'>
             <button className={'sort-button ' + (order==='voteScore' ? 'selected' : 'deselected')}
               onClick={() => this.setState({order: 'voteScore'})}

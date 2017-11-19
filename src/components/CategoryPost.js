@@ -10,7 +10,7 @@ class CategoryPost extends Component {
     order: "voteScore"
   }
   render() {
-    const { posts_org, category, route } = this.props
+    const { posts_org, category, route, history } = this.props
     const { order } = this.state
     let current_category = route.params.category
     let posts = posts_org.filter((post) => post.category === current_category)
@@ -21,7 +21,8 @@ class CategoryPost extends Component {
           {posts.length === 0 ?
             <div style={{marginTop:'50px'}}>Data is empty !</div> :
             posts.map(post => (
-            <div className='post-wrapper'key={post.id}>
+            <div className='post-wrapper' key={post.id}
+              onClick={() => history.push('/detail/' + post.id)}>
               <p className='post-title'>title-> {post.title}</p>
               <p className='post-body'>body-> {post.body}</p>
               <p className='post-author'>author-> {post.author}</p>
@@ -41,7 +42,6 @@ class CategoryPost extends Component {
               </Link>
             ))}
           </div>
-          <Link to={'/detail/1'}>go to test</Link>
           <div className='Sorts'>
             <button className={'sort-button ' + (order==='voteScore' ? 'selected' : 'deselected')}
               onClick={() => this.setState({order: 'voteScore'})}

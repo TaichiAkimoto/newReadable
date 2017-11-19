@@ -9,11 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path='/' render={() => (
-          <Posts />
+        <Route exact path='/' render={({ history }) => (
+          <Posts history={history}/>
         )}/>
-        <Route exact path='/:category' render={({ match }) => (
-          <CategoryPost route={match}/>
+        <Route exact path='/:category' render={({ match, history }) => (
+          <CategoryPost route={match} history={history}/>
         )}/>
         <Route exact path='/detail/:id' render={() => (
           <PostDetail />
