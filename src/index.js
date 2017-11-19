@@ -14,12 +14,13 @@ import reducer from './reducers'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { persistStore, autoRehydrate } from 'redux-persist'
+import localForage from "localforage"
 
 let store = compose(
   applyMiddleware(logger, thunk),
   autoRehydrate()
 )(createStore)(reducer);
-persistStore(store, {storage: localStorage})
+persistStore(store, {storage: localForage})
 
 ReactDOM.render(
   <Provider store={store}>
