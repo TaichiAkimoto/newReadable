@@ -50,6 +50,9 @@ class CategoryPost extends Component {
               onClick={() => this.setState({order: 'timestamp'})}
             >Sort by Date !</button>
           </div>
+          <Link className='new-post' to={'/edit/' + 0}>
+            Create a New Post
+          </Link>
         </div>
       </div>
     )

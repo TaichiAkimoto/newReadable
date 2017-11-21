@@ -5,28 +5,17 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import {
-  createStore,
-  applyMiddleware,
-  compose,
-} from 'redux'
-import reducer from './reducers'
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
-import { persistStore, autoRehydrate } from 'redux-persist'
-import localForage from "localforage"
-
-let store = compose(
-  applyMiddleware(logger, thunk),
-  autoRehydrate()
-)(createStore)(reducer);
-persistStore(store, {storage: localForage, blacklist: ['routing']})
+import { PersistGate } from 'redux-persist/es/integration/react'
+import { configureStore } from './MakeStore'
+const { persistor, store } = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PersistGate persistor={persistor}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 )

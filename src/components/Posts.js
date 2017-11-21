@@ -42,6 +42,7 @@ class Posts extends Component {
           <div className='Category'>
             <Link to={'/'} className='Link' style={{backgroundColor: 'purple'}}>
               Default
+              
             </Link>
             {category.map(each => (
               <Link key={each.name} to={'/' + each.name} className='Link'>
@@ -57,6 +58,9 @@ class Posts extends Component {
               onClick={() => this.setState({order: 'timestamp'})}
             >Sort by Date !</button>
           </div>
+          <Link className='new-post' to={'/edit/' + 0}>
+            Create a New Post
+          </Link>
         </div>
       </div>
     )

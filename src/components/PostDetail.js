@@ -4,7 +4,7 @@ export default class PostDetail extends Component {
   render() {
     return (
       <div>
-        Hello world
+        This is where fun begins!
       </div>
     )
   }

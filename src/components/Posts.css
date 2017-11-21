@@ -29,9 +29,14 @@
   margin-top: 50px;
 }
 
+.new-post {
+  margin-top: 10px;
+}
+
 .Sorts {
   flex-direction: row;
   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .sort-button {
