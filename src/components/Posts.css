@@ -3,6 +3,11 @@
   justify-content: space-around;
 }
 
+.test {
+  margin-right: 300px;
+  margin-top: 0px;
+}
+
 .Posts {
   flex-direction: column;
   align-items: flex-start;

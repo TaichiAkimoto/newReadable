@@ -15,6 +15,7 @@ import {
 const config = {
   key: 'primary',
   storage: localForage,
+  blacklist: ['routing']
 }
     
 const reducers = persistCombineReducers(config, {
@@ -25,6 +26,7 @@ const reducers = persistCombineReducers(config, {
 export const configureStore = () => {
   const store = createStore(
     reducers,
+    undefined,
     compose(
       applyMiddleware(logger, thunk)
     )

@@ -9,7 +9,7 @@ export const getPosts = () =>
     .then(posts => posts.json())
 
 export const getCategory = () =>
-  fetch(`${uri}/categories`, { headers })
+  fetch(`${urils}/categories`, { headers })
     .then(res => res.json())
     .then(res => res.categories)
 

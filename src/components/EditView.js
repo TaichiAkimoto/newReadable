@@ -7,7 +7,7 @@ export default class EditView extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='Flex test'>
         <form onSubmit={this.handleSubmit} className='createEditForm'>
            <button>Push!</button>
         </form>
